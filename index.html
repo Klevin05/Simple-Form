@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style >
+    h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: rgba(235, 132, 36, 0.911);
+    text-decoration-style: dashed;
+}
+h2{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#head2{
+    font-family: monospace;
+}
+.name{
+    width: 250px;
+    height: 40px;
+    border-color: rgb(247, 14, 14);
+    border-width: 2px;
+    margin: 3px;
+    padding: 3px;
+    font-size: medium;
+    border-style: double;
+}
+.row{
+    text-align: center;
+}
+.select{
+    width: 250px;
+    height: 40px;
+    border-color: rgb(5, 5, 5);
+    border-width: 2px;
+    margin: 3px;
+    padding: 3px;
+    font-size: medium;
+}
+.select1{
+    width: 250px;
+    height: 40px;
+    border-color: rgb(5, 5, 5);
+    border-width: 2px;
+    margin: 3px;
+    padding: 3px;
+    font-size: medium;
+}
+.submit1{
+    width: 250px;
+    margin: 20px;
+    background-color: #945113; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
+
+<body>
+    <div id="Project">
+        <h1>Passport</h1>
+        <h2>Application set to apply for delhi</h2>
+        <h2 id="head2">Add your details (As per your registered records)</h2>
+        
+        <form id="MyForm">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" placeholder="Full name of aplicant"/ class="name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <select class="select">
+                            <option value="" disabled selected hidden>Age</option>
+                            <option>18-25</option>
+                            <option>26-35</option>
+                            <option>36-45</option>
+                            <option>46-55</option>
+                            <option>56-65</option>
+                            <option>66-75</option>
+                            <option>76-85</option>
+                            <option> >85 </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <select class="select1" required>
+                            <option value="" disabled selected hidden >Type of Application</option>
+                            <option>Fresh Passport</option>
+                            <option>Reissue of Passport</option>
+                            <option>Tatkaal Scheme</option>
+                            <option>Police Clearance Certificate</option>
+                            <option>Diplomatic Passport</option>
+                            <option>Identity Certificate</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <select class="select1" required>
+                            <option value="" disabled selected hidden >No. of Pages</option>
+                            <option>32</option>
+                            <option>60</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="submit1">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script >
+    $(document).ready(function(){
+    $('.submit1').prop('disabled', true);
+     $('.select1').val(function() {
+        if($(this).val() != '') {
+           $('.submit1').prop('disabled', false);
+           $('.submit1').css("background-color : red")
+        }
+     });
+    
+     //$("#MyForm").validate();
+    })
+</script>
+</html>
